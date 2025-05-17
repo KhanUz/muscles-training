@@ -39,7 +39,7 @@ function createConnection(url) {
     function getDb(dbName) {
         return client.db(dbName)
     }
-    return { client, connect, disconnect }
+    return { client, connect, disconnect, getDb }
 }
 
 
