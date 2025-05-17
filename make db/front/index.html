@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <form id="form" class="mt-5">
+                <!-- Muscle -->
+                <div class="mb-3">
+                    <label for="muscle" class="form-label">Muscle</label>
+
+                    <select class="form-select" id="muscle" name="muscle">
+                        <!-- Add more as needed -->
+                        <option value="biceps">BICEPS</option>
+                        <option value="calves">CALVES</option>
+                        <option value="forearms">FOREARMS</option>
+                        <option value="front_delts">FRONT DELTS</option>
+                        <option value="glutes">GLUTES</option>
+                        <option value="hamstrings">HAMSTRINGS</option>
+                        <option value="hip_abductor">HIP ABDUCTOR</option>
+                        <option value="hip_adductor">HIP ADDUCTOR</option>
+                        <option value="lats">LATS</option>
+                        <option value="lower_abs">LOWER ABS</option>
+                        <option value="lower_back">LOWER BACK</option>
+                        <option value="lower_pecs">LOWER PECS</option>
+                        <option value="lower_traps">LOWER TRAPS</option>
+                        <option value="middle_pecs">MIDDLE PECS</option>
+                        <option value="neck">NECK</option>
+                        <option value="obliques">OBLIQUES</option>
+                        <option value="quads">QUADS</option>
+                        <option value="rear_delts">REAR DELTS</option>
+                        <option value="rhomboids">RHOMBOIDS</option>
+                        <option value="side_delts">SIDE DELTS</option>
+                        <option value="triceps">TRICEPS</option>
+                        <option value="upper_abs">UPPER ABS</option>
+                        <option value="upper_pecs">UPPER PECS</option>
+                        <option value="upper_traps">UPPER TRAPS</option>
+                    </select>
+                    <div class="form-text">
+                        Primary muscle this exercise targets.
+                    </div>
+                </div>
+                <!-- Instructions -->
+                <div class="mb-3">
+                    <label for="muscle_description" class="form-label"
+                        >Muscle Description</label
+                    >
+                    <textarea
+                        class="form-control"
+                        id="muscle_description"
+                        name="muscle_description"
+                        rows="4"
+                        placeholder="Explain what this muscle does."
+                    ></textarea>
+                </div>
+                <!-- Exercise Name -->
+                <div class="mb-3">
+                    <label for="exercise_name" class="form-label"
+                        >Exercise Name</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exercise_name"
+                        name="exercise_name"
+                    />
+                </div>
+
+                <!-- Equipment -->
+                <div class="mb-3">
+                    <label for="equipment" class="form-label">Equipment</label>
+                    <select class="form-select" id="equipment" name="equipment">
+                        <option value="">Select Equipment</option>
+                        <option value="bodyweight">Bodyweight</option>
+                        <option value="dumbbell">Dumbbell</option>
+                        <option value="barbell">Barbell</option>
+                        <!-- Add more as needed -->
+                    </select>
+                </div>
+
+                <!-- Difficulty -->
+                <div class="mb-3">
+                    <label for="difficulty" class="form-label"
+                        >Difficulty</label
+                    >
+                    <select
+                        class="form-select"
+                        id="difficulty"
+                        name="difficulty"
+                    >
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <!-- Instructions -->
+                <div class="mb-3">
+                    <label for="instructions" class="form-label"
+                        >Instructions</label
+                    >
+                    <textarea
+                        class="form-control"
+                        id="instructions"
+                        name="instructions"
+                        rows="4"
+                        placeholder="Explain how to perform the exercise."
+                    ></textarea>
+                </div>
+
+                <!-- Video URL -->
+                <div class="mb-3">
+                    <label for="video_url" class="form-label">Video URL</label>
+                    <input
+                        type="url"
+                        class="form-control"
+                        id="video_url"
+                        name="video_url"
+                        placeholder="https://..."
+                    />
+                </div>
+
+                <!-- Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" id="category" name="category">
+                        <option value="">Select Category</option>
+                        <option value="strength">Strength</option>
+                        <option value="mobility">Mobility</option>
+                        <option value="stretch">Stretch</option>
+                    </select>
+                </div>
+
+                <button id="sendBtn" type="button" class="btn btn-primary">
+                    Save Exercise
+                </button>
+            </form>
+        </div>
+    </body>
+    <script src="./index.js"></script>
+</html>

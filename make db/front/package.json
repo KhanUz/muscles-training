@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@google/genai": "^0.14.1",
+    "@types/node": "^22.15.18",
+    "dotenv": "^16.5.0",
+    "groq-sdk": "^0.22.0",
+    "mongodb": "^6.16.0"
+  },
+  "type": "module"
+}
