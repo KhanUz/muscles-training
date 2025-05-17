@@ -40,12 +40,16 @@ function createServerWithContext(context) {
         if (fs.existsSync(filePath)) {
 
             res.write(await fs.promises.readFile(filePath))
-        } else if (req.method == "POST" && req.url === "/api/addExercise") {
-            const body = JSON.parse(await getRequestBody(req));
+            res.end()
+        } else if (req.method === "POST" && req.url === "/api/addExercise") {
+            const body = await JSON.parse(await getRequestBody(req));
+            console.log(body);
             context.db.collection("exercises").insertOne(body);
+            res.end()
+        } else {
+            res.writeHead(404, { "Content-Type": "text/plain" });
+            res.end("Not Found");
         }
-
-        res.end()
     }).listen(3000, () => {
         console.log("server is running on server http://localhost:3000");
     })
