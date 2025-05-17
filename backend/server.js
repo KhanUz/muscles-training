@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const app = express();
 
 
 const dbConnect = require('./db/connectDb');
@@ -7,12 +8,15 @@ const dbConnect = require('./db/connectDb');
 const connectionWdb = dbConnect("mongodb://127.0.0.1:27017");
 connectionWdb.connect()
 
-const app = express();
-
+app.locals.collection = connectionWdb.getDb("app").collection("exercises")
 const apiRoutes = require("./routes/apiRoutes")
 
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 app.use(express.json())
+
+
+
+
 
 
 
