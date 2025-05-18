@@ -1036,7 +1036,15 @@ const obj = [
         "muscle": "hip_adductor"
     }
 ]
-console.log(obj.length);
+
+for (const doc of obj) {
+    doc.muscle = doc.muscle.split('_').join(' ')
+    console.log(doc.muscle.charCodeAt(0));
+
+
+}
+console.log(obj);
+
 
 async function fn() {
     for await (const doc of obj) {
