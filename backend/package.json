@@ -5,8 +5,7 @@
         "mongodb": "^6.16.0"
     },
     "scripts": {
-        "start": "nodemon index.js",
-        "launch": "node server.js"
+        "start": "node server.js"
     },
     "devDependencies": {
         "dotenv": "^16.5.0",
