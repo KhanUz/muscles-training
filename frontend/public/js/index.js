@@ -1,4 +1,6 @@
 
+let percent = 40
+
 
 
 const musclesContainer = document.getElementById("musclesContainer")
@@ -70,18 +72,10 @@ async function main() {
         where.innerHTML = what;
     }
     function drawMuscles() {
-        function getRedShade(percent) {
-            function map(x, inMin, inMax, outMin, outMax) {
-                return ((x - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-            }
-            let sat = map(percent, 0, 100, 10, 100);
-            let opacity = map(percent, 0, 100, 0.1, 1);
-            return `hsla(0, ${sat}%, 50%, ${opacity})`;
-        }
+
 
         musclesContainer.querySelectorAll("g").forEach(g => {
 
-            let percent = 40
 
 
 
@@ -92,15 +86,43 @@ async function main() {
                 if (!musclesNot.has(g.id)) {
                     muscle.style.fill = muscle.style.stroke = getRedShade(percent);
                     muscle.addEventListener('click', selectMuscle)
+
                 }
             }
         })
 
 
     }
+    function getRedShade(percent) {
+        function map(x, inMin, inMax, outMin, outMax) {
+            return ((x - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+        }
+        let sat = map(percent, 0, 100, 10, 100);
+        let opacity = map(percent, 0, 100, 0.1, 1);
+        return `hsla(0, ${sat}%, 50%, ${opacity})`;
+    }
+    function colorEachMuscle(target) {
 
+        musclesContainer.querySelectorAll("g").forEach(g => {
+            for (let i = 0; i < g.children.length; i++) {
+                const muscle = g.children[i]
+
+                if (g.id === target) {
+                    muscle.style.fill = muscle.style.stroke = 'rgb(160, 79, 227)';
+                }
+                else if (!musclesNot.has(g.id)) {
+                    muscle.style.fill = muscle.style.stroke = getRedShade(percent);
+
+                }
+
+            }
+        })
+    }
     async function selectMuscle(e) {
         let str = '';
+
+        colorEachMuscle(e.target.parentNode.id)
+
         try {
             const filterMuscle = e.target.parentNode.id
 
