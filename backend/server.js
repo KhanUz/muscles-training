@@ -6,7 +6,7 @@ const app = express();
 
 
 const dbConnect = require('./db/connectDb');
-const connectionWdb = dbConnect("mongodb://127.0.0.1:27017");
+const connectionWdb = dbConnect(process.env.DB_URL);
 connectionWdb.connect()
 
 app.locals.collection = connectionWdb.getDb("app").collection("exercises")
