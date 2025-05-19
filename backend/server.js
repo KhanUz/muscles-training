@@ -55,7 +55,7 @@ app.use((req, res) => {
 
 
 
-app.listen(PORT, () => console.log('Server is up on port http://localhost:3000'));
+app.listen(process.env.PORT, () => console.log('Server is running'));
 
 
 
